@@ -1,0 +1,109 @@
+Termial. HW_1
+Linux terminal (GitBash) commands
+
+1. Посмотреть где я 
+pwd
+
+2. Создать папку
+mkdir TestFolder
+
+3. Зайти в папку 
+cd Folder1
+
+4. Создать 3 папки 
+mkdir F1 F2 F3
+
+5. Зайти в любую папку 
+cd F1
+
+6. Создать 5 файлов (3 txt, 2 json) 
+touch f1.txt f2.txt f3.txt f4.json f5.json
+
+7. Создать 3 папки 
+mkdir F11 F12 F13
+
+8. Вывести список содержимого папки 
+ls -la
+
+9. Открыть любой txt файл 
+vim f1.txt(открыть файл), i(перейти в режим редактирования) 
+
+10. Написать туда что-нибудь, любой текст 
+test test
+
+11. Сохранить и выйти 
+Esc - выйти из режима редактирования)
+:wq 
+
+12. Выйти из папки на уровень выше 
+../
+
+13. переместить любые 2 файла, которые вы создали, в любую другую папку 
+mv F1/f1.txt F1/f2.txt F2
+
+14. скопировать любые 2 файла, которые вы создали, в любую другую папку 
+cp F2/f1.txt F2/f2.txt F3
+
+15. Найти файл по имени 
+find . -name f1.txt - поиск файла f1.txt в текущем каталоге
+find . - name "*.txt" - поиск файла текстового файла в текущем каталоге
+
+16. просмотреть содержимое в реальном времени 
+tail -f f1.txt
+
+17. вывести несколько первых строк(2) из текстового файла 
+head -2 f1.txt
+
+18. вывести несколько последних строк(2) из текстового файла 
+tail -2 f1.txt
+
+19. просмотреть содержимое длинного файла (команда less) изучите как она работает:
+less F2/f1.txt
+клавиша q - выйти из less и вернуться в командную строку
+
+20. вывести дату и время 
+date
+=========
+
+Задание *
+1) Отправить http запрос на сервер: http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/terminal-hw-request
+
+Ответ:
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)",
+    "result": [
+      "Your_String",
+      "Your_number"
+    ]
+  }
+}
+
+curl "http://162.55.220.72:5006/get_method?name=Alena&age=37"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+- Создайть пустой файл с использованием команды touch:
+touch script
+- В первой строчке файла написать #!/bin/bash
+2. Сделать файл исполняемым в Linux:
+chmod +x ./script
+
+3. Добавить в файл нужные команды:
+#!/bin/bash
+echo "The current directory is:"
+pwd
+cd /f
+mkdir ScriptFolder
+cd ScriptFolder
+mkdir Folder1 Folder2 Folder3
+echo "Folder1, Folder2, Folder3 have been created"
+cd Folder1
+touch file1.txt file2.txt file3.txt file4.json file5.json
+mkdir Folder11 Folder12 Folder13
+echo "5 files and 3 folders have been created"
+echo "Files and directories:"
+ls -la
+mv file1.txt file2.txt ../Folder2/
+
+4. Запустить выполнение скрипта в терминале
+./script
